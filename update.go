@@ -9,7 +9,7 @@ import (
 
 var (
 	DEST    = filepath.Join(os.Getenv("HOME"))
-	EXCLUDE = []string{"README.md", "osx", ".git", "update.go"}
+	EXCLUDE = []string{"README.md", "osx", ".git", "update.go", ".gitignore", ".gitmodules"}
 )
 
 func main() {
