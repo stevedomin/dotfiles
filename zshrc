@@ -42,7 +42,7 @@ bindkey '^X^Z' predict-off
 zstyle ':predict' verbose true
 setopt interactivecomments
 
-source $HOME/.zsh
+source $ZSH/oh-my-zsh.sh
 
 for file in $HOME/.zsh/*; do
     if [[ $file != $0 ]]; then
