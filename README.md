@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-Inspired by (https://github.com/hmarr/dotfiles)[Harry Marr's dotfiles].
+Inspired by [Harry's dotfiles](https://github.com/hmarr/dotfiles) and [Phil's dotfiles](https://github.com/Harrison/dotfiles).
 
 ## Installation
 

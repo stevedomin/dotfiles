@@ -8,3 +8,5 @@ export GOPATH=/Users/steve/src/go
 
 # for bundled binaries
 PATH=.bundle/binstubs:$PATH
+
+PATH=node_modules/.bin:$PATH
