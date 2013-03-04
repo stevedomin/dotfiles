@@ -32,7 +32,7 @@ ZSH_THEME="steved"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git rails ruby bundler node npm)
 
 autoload predict-on
 zle -N predict-on
@@ -50,8 +50,20 @@ for file in $HOME/.zsh/*; do
     fi
 done
 
-# rbenv
-eval "$(rbenv init - --no-rehash)"
+PROJECTS_PATH="$HOME/src"
+GC_PROJECTS_PATH="$HOME/src/gc"
+for project in `ls $PROJECTS_PATH`; do
+  if [ -d $PROJECTS_PATH/$project ]; then
+    eval "function ,$project { cd $PROJECTS_PATH/$project }"
+  fi
+done
+for project in `ls $GC_PROJECTS_PATH`; do
+  if [ -d $GC_PROJECTS_PATH/$project ]; then
+    eval "function ,$project { cd $GC_PROJECTS_PATH/$project }"
+  fi
+done
+unset project
 
-# Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin:/Users/steve/bin
+# rbenv
+eval "$(rbenv init -)"
+
