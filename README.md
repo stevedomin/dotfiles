@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-Some ideas taken [Harry's dotfiles](https://github.com/hmarr/dotfiles) and [Phil's dotfiles](https://github.com/Harrison/dotfiles) and dotfiles repos around the web.
+Some ideas taken from [Harry's dotfiles](https://github.com/hmarr/dotfiles) and [Phil's dotfiles](https://github.com/Harrison/dotfiles) and dotfiles repos around the web.
 
 ## Installation
 
