@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-Inspired by [Harry's dotfiles](https://github.com/hmarr/dotfiles) and [Phil's dotfiles](https://github.com/Harrison/dotfiles).
+Some ideas taken [Harry's dotfiles](https://github.com/hmarr/dotfiles) and [Phil's dotfiles](https://github.com/Harrison/dotfiles) and dotfiles repos around the web.
 
 ## Installation
 
@@ -17,7 +17,6 @@ $ ./osx
 
 To install (make sure you have Homebrew and go)
 ```bash
-$ git submodule update --init
 $ go run update.go
 ``` 
 
