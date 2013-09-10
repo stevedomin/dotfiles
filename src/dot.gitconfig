@@ -1,8 +1,9 @@
 [user]
 	name = Steve
-	email = steve@gocardless.com
+	email = steve@stevedomin.com
 
 [alias]
+	workprofile = config user.email "steve@gocardless.com"
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
@@ -23,7 +24,7 @@
 	undopush = push -f origin HEAD^:master
 	# Add all
 	a  = add .
-	# Add 
+	# Add
 	au = add -u .
 	# Commit
 	c  = commit
@@ -55,9 +56,9 @@
 	mr = merge --no-ff
 	# Unstage
 	unstage = reset HEAD
-	# 
+	#
 	what = whatchanged
-	
+
 	grep = grep -nw
 	prune-all = !git remote | xargs -n 1 git remote prune
 	rank = shortlog -sn --no-merges

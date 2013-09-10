@@ -1,23 +1,11 @@
-dotfiles
+dotsetup
 ========
 
-Some ideas taken from [Harry's dotfiles](https://github.com/hmarr/dotfiles) and [Phil's dotfiles](https://github.com/Harrison/dotfiles) and dotfiles repos around the web.
+Dotsetup is a tool for managing dotfiles.
 
-## Installation
-
-### OS X Config
-
-To install
+# Usage
 
 ```bash
-$ ./osx
+$ ./bin/osx           # Configure OS X
+$ ./bin/dotsetup src  # Install terminal config
 ```
-
-### Terminal config
-
-To install (make sure you have Homebrew and go)
-```bash
-$ go run update.go
-``` 
-
-
