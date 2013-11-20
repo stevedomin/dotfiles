@@ -4,6 +4,7 @@ set fish_greeting
 # ENV
 # --------------------------------------------
 
+set -xg EDITOR vim
 set -xg GOPATH /Users/steve/src/go
 set -xg KNIFE_ENV 'staging'
 set -xg PKG_CONFIG_PATH /usr/local/Cellar/sqlite/3.7.17/lib/pkgconfig/
