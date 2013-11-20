@@ -39,13 +39,8 @@ set -l plugins_path ~/.config/fish/plugins
 . $plugins_path/node_modules/node_modules.fish
 
 # --------------------------------------------
-# FUNCTIONS
 # --------------------------------------------
 
-# Reload all functions
-for fish_file in ~/.config/fish/functions/*
-  . $fish_file
-end
 for fish_file in ~/.config/fish/private/*
   . $fish_file
 end

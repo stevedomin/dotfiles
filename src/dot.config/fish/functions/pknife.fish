@@ -5,8 +5,3 @@ function pknife
   # after knife command is run in production
   set KNIFE_ENV 'staging'
 end
- 
-function sknife
-  set KNIFE_ENV 'staging'
-  knife $argv
-end
