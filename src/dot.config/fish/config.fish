@@ -40,8 +40,28 @@ set -l plugins_path ~/.config/fish/plugins
 . $plugins_path/node_modules/node_modules.fish
 
 # --------------------------------------------
+# PRIVATE
 # --------------------------------------------
 
 for fish_file in ~/.config/fish/private/*
   . $fish_file
 end
+
+# --------------------------------------------
+# PROJECTS
+# --------------------------------------------
+
+eval functions|grep ,|functions -e xargs
+set PROJECTS_PATH $HOME/src $HOME/src/gc $HOME/src/go/src/github.com/stevedomin $HOME/src/go/src/github.com/gocardless
+
+for project_path in $PROJECTS_PATH
+  for project in $project_path/*
+    if test -d $project
+      set name (basename $project)
+      eval "function ,{$name} ; cd {$project}; end"
+    end
+  end
+end
+
+set -e PROJECTS_PATH
+set -e project
