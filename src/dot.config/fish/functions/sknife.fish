@@ -1,4 +1,4 @@
 function sknife
   set KNIFE_ENV 'staging'
-  knife $argv
+  command knife $argv
 end

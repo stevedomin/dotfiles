@@ -4,21 +4,25 @@ set fish_greeting
 # ENV
 # --------------------------------------------
 
+set -xg CODEPATH /Users/steve/code
 set -xg EDITOR vim
-set -xg GOPATH /Users/steve/src/go
+set -xg GOPATH $CODEPATH/go
 set -xg KNIFE_ENV 'staging'
 set -xg PKG_CONFIG_PATH /usr/local/Cellar/sqlite/3.7.17/lib/pkgconfig/
+set -xg PLAN9 /usr/local/plan9
 
 # --------------------------------------------
 # PATH
 # --------------------------------------------
 
 set -xg PATH /usr/bin /bin /usr/sbin /sbin /opt/X11/bin
-set -xg PATH /Users/steve/src/go/bin /usr/local/bin /usr/local/sbin $PATH
+set -xg PATH $CODEPATH/go/bin /usr/local/bin /usr/local/sbin $PATH
 set -xg PATH /usr/local/share/npm/bin $PATH
 
 ### Added by the Heroku Toolbelt
 set -xg PATH /usr/local/heroku/bin $PATH
+
+set -xg PATH $PATH $PLAN9/bin
 
 # --------------------------------------------
 # RBENV
@@ -52,7 +56,7 @@ end
 # --------------------------------------------
 
 eval functions|grep ,|functions -e xargs
-set PROJECTS_PATH $HOME/src $HOME/src/gc $HOME/src/go/src/github.com/stevedomin $HOME/src/go/src/github.com/gocardless
+set PROJECTS_PATH $CODEPATH $CODEPATH/gc $CODEPATH/go/code/github.com/stevedomin $CODEPATH/go/code/github.com/gocardless
 
 for project_path in $PROJECTS_PATH
   for project in $project_path/*
