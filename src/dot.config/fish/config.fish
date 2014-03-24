@@ -24,7 +24,7 @@ set -xg PATH /usr/local/share/npm/bin $PATH
 set -xg PATH $CODEPATH/golang/bin $PATH
 set -xg PATH $PLAN9/bin $PATH
 set -xg PATH /usr/local/heroku/bin $PATH
-set -xg PATH $CODEPATH/go/bin $PATH
+set -xg PATH $GOBIN $PATH
 
 # --------------------------------------------
 # RBENV
