@@ -6,11 +6,13 @@ set fish_greeting
 
 set -xg CODEPATH /Users/steve/code
 set -xg EDITOR vim
-set -xg GOPATH $CODEPATH/go
 set -xg KNIFE_ENV 'staging'
 set -xg PKG_CONFIG_PATH /usr/local/Cellar/sqlite/3.7.17/lib/pkgconfig/
 set -xg PLAN9 /usr/local/plan9
 set -xg DOCKER_HOST tcp://localhost:4243
+
+set -xg GOPATH $CODEPATH/go
+set -xg GOBIN $GOPATH/bin
 
 # --------------------------------------------
 # PATH
