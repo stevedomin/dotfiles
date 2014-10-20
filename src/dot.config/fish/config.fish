@@ -4,25 +4,21 @@ set fish_greeting
 # ENV
 # --------------------------------------------
 
-set -xg CODEPATH /Users/steve/code
-set -xg EDITOR vim
-set -xg KNIFE_ENV 'staging'
-set -xg PKG_CONFIG_PATH /usr/local/Cellar/sqlite/3.7.17/lib/pkgconfig/
-set -xg PLAN9 /usr/local/plan9
-set -xg DOCKER_HOST tcp://localhost:4243
+set -xg EDITOR 'vim'
 
-set -xg GOPATH $CODEPATH/go
+set -xg KNIFE_ENV 'staging'
+set -xg DOCKER_HOST tcp://192.168.59.103:2375
+
+set -xg GOPATH $HOME
 set -xg GOBIN $GOPATH/bin
 
 # --------------------------------------------
 # PATH
 # --------------------------------------------
 
-set -xg PATH $PLAN9/bin
 set -xg PATH /usr/bin /bin /usr/sbin /sbin /opt/X11/bin $PATH
 set -xg PATH /usr/local/bin $PATH
 set -xg PATH /usr/local/share/npm/bin $PATH
-set -xg PATH $CODEPATH/golang/bin $PATH
 set -xg PATH /usr/local/heroku/bin $PATH
 set -xg PATH $GOBIN $PATH
 
@@ -58,7 +54,7 @@ end
 # --------------------------------------------
 
 eval functions|grep ,|functions -e xargs
-set PROJECTS_PATH $CODEPATH $CODEPATH/gc $CODEPATH/go/src/github.com/stevedomin $CODEPATH/go/src/github.com/gocardless
+set PROJECTS_PATH $HOME/src $HOME/src/github.com/stevedomin $HOME/src/github.com/gocardless
 
 for project_path in $PROJECTS_PATH
   for project in $project_path/*
