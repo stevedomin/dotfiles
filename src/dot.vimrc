@@ -18,6 +18,7 @@ Bundle 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 
 " Language plugins
 Plugin 'fatih/vim-go'
@@ -54,9 +55,13 @@ set colorcolumn=+1
 
 set noswapfile " No swap files
 
-set laststatus=2 " For airline
+" Airline
+set laststatus=2 " Always show status line
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 let g:go_fmt_command = "goimports" " Use goimports instead of gofmt
 
