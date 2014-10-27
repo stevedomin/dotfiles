@@ -49,7 +49,7 @@ set ttymouse=xterm2
 
 set cursorline " Highlight the cursor line
 
-set textwidth=80
+set textwidth=120
 set colorcolumn=+1
 
 set noswapfile " No swap files
