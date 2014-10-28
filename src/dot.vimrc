@@ -50,10 +50,24 @@ set ttymouse=xterm2
 
 set cursorline " Highlight the cursor line
 
-set textwidth=120
+set textwidth=120 " Text column size
+set nowrap " Don't wrap lines
 set colorcolumn=+1
 
 set noswapfile " No swap files
+set backup " Make backup files
+set backupdir=~/.vim/backup " Location of backup files 
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Better vim splitting
+" From http://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Airline
 set laststatus=2 " Always show status line
