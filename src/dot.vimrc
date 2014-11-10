@@ -19,6 +19,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
 
 " Language plugins
 Plugin 'fatih/vim-go'
@@ -32,11 +33,15 @@ set background=dark
 colorscheme solarized
 
 set hidden " Leave hidden buffers open
+
 set history=1000 " By default Vim saves your last 8 commands
 
 set number " Enable line numbers
 
 set expandtab " Tab -> spaces
+set tabstop=2 " Tab shows as two columns wide
+set shiftwidth=2 " How many spaces to indent text with
+set softtabstop=2 " How many columns to insert when I press tab
 set backspace=indent,eol,start "Allow backspacing over everything in insert mode
 
 set incsearch " Search as you type
@@ -58,6 +63,12 @@ set noswapfile " No swap files
 set backup " Make backup files
 set backupdir=~/.vim/backup " Location of backup files 
 
+" Emacs-style start and end of line
+inoremap <c-a> <esc>I " In insert mode
+inoremap <c-e> <esc>A
+cnoremap <c-a> <home> " In command mode
+cnoremap <c-e> <end>
+
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
@@ -77,6 +88,6 @@ let g:airline#extensions#tabline#enabled = 1
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+" vim-go
 let g:go_fmt_command = "goimports" " Use goimports instead of gofmt
-
 
