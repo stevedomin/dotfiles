@@ -37,6 +37,8 @@ set hidden " Leave hidden buffers open
 
 set history=1000 " By default Vim saves your last 8 commands
 
+set clipboard=unnamed " Using system copy/paste register
+
 set number " Enable line numbers
 
 set expandtab " Tab -> spaces
