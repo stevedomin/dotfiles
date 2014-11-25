@@ -66,15 +66,16 @@ set noswapfile " No swap files
 set backup " Make backup files
 set backupdir=~/.vim/backup " Location of backup files 
 
-" Emacs-style start and end of line
-inoremap <c-a> <esc>I " In insert mode
-inoremap <c-e> <esc>A
-cnoremap <c-a> <home> " In command mode
-cnoremap <c-e> <end>
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" Mapping
+
+let mapleader=','
+
+" Substitute
+nnoremap <leader>s :%s//g<left><left>
 
 " Better vim splitting
 " From http://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
@@ -82,6 +83,14 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Emacs-style start and end of line
+" In insert mode
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A
+" In command mode
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
 
 " Airline
 set laststatus=2 " Always show status line
