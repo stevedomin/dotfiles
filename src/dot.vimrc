@@ -92,6 +92,9 @@ inoremap <c-e> <esc>A
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 
+" Never go in Ex mode again
+nnoremap Q <nop> 
+
 " Airline
 set laststatus=2 " Always show status line
 let g:airline_powerline_fonts = 1
