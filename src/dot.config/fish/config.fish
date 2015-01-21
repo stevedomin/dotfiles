@@ -11,6 +11,7 @@ set -xg DOCKER_HOST tcp://192.168.59.103:2375
 
 set -xg GOPATH $HOME
 set -xg GOBIN $GOPATH/bin
+set -xg GPG_TTY (tty)
 
 # --------------------------------------------
 # PATH
