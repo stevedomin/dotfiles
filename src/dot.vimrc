@@ -104,5 +104,5 @@ let g:airline#extensions#tabline#enabled = 1
 map <C-n> :NERDTreeToggle<CR>
 
 " vim-go
-let g:go_fmt_command = "goimports" " Use goimports instead of gofmt
+let g:go_fmt_command = "gofmt" " Use goimports instead of gofmt
 
