@@ -7,7 +7,7 @@ set fish_greeting
 set -xg EDITOR 'vim'
 
 set -xg KNIFE_ENV 'staging'
-set -xg DOCKER_HOST tcp://192.168.59.103:2375
+set -xg DOCKER_HOST tcp://dev.vm:2375
 
 set -xg GOPATH $HOME
 set -xg GOBIN $GOPATH/bin
