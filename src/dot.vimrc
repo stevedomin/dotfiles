@@ -54,7 +54,7 @@ set smartcase " Case sensitive searches when uppercase characters are used
 set showmatch " Highlight matching bracket
 
 set mouse=a " Enable mouse in all modes
-set ttymouse=xterm2
+set ttymouse=sgr
 
 set cursorline " Highlight the cursor line
 
