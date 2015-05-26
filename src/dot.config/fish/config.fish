@@ -13,6 +13,9 @@ set -xg GOPATH $HOME
 set -xg GOBIN $GOPATH/bin
 set -xg GPG_TTY (tty)
 
+set -xg LC_ALL en_US.UTF-8
+set -xg LANG en_US.UTF-8
+
 # --------------------------------------------
 # PATH
 # --------------------------------------------
