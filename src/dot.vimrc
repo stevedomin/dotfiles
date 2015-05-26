@@ -20,6 +20,7 @@ Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rking/ag.vim'
 
 " Language plugins
 Plugin 'fatih/vim-go'
