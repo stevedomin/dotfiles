@@ -12,19 +12,25 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Color scheme
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 " Misc. plugins
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Language plugins
 Plugin 'fatih/vim-go'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-markdown'
+Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,24 +65,37 @@ set ttymouse=sgr
 
 set cursorline " Highlight the cursor line
 
-set textwidth=120 " Text column size
 set nowrap " Don't wrap lines
-set colorcolumn=+1
+set colorcolumn=81,121
 
-set noswapfile " No swap files
-set backup " Make backup files
-set backupdir=~/.vim/backup " Location of backup files 
+set noswapfile
+set nobackup
+set nowritebackup
+
+set gdefault " /g flag on substitutions
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
 
-" Mapping
+set wildignore+=*.o,*.obj,.git,*.pyc,node_modules
 
+" Syntax highlighting is slower with the new engine
+set regexpengine=1
+
+" Mapping
 let mapleader=','
 
 " Substitute
 nnoremap <leader>s :%s//g<left><left>
+
+" Splits
+map <leader>v :vs<CR>
+map <leader>h :sp<CR>
+
+" Save with ctrl-s
+map <C-s> <Esc>:w<CR>
+imap <C-s> <Esc>:w<CR>
 
 " Better vim splitting
 " From http://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
@@ -87,14 +106,17 @@ nnoremap <C-H> <C-W><C-H>
 
 " Emacs-style start and end of line
 " In insert mode
-inoremap <c-a> <esc>I
-inoremap <c-e> <esc>A
+inoremap <C-a> <Esc>I
+inoremap <C-e> <Esc>A
 " In command mode
-cnoremap <c-a> <home>
-cnoremap <c-e> <end>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 
 " Never go in Ex mode again
-nnoremap Q <nop> 
+nnoremap Q <nop>
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Airline
 set laststatus=2 " Always show status line
@@ -106,4 +128,16 @@ map <C-n> :NERDTreeToggle<CR>
 
 " vim-go
 let g:go_fmt_command = "gofmt" " Use goimports instead of gofmt
+
+" The Silver Searcher - https://robots.thoughtbot.com/faster-grepping-in-vim
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
