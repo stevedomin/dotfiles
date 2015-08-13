@@ -24,6 +24,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Language plugins
 Plugin 'fatih/vim-go'
