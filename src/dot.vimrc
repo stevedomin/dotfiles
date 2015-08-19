@@ -19,12 +19,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
 Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'JazzCore/ctrlp-cmatcher'
 
 " Language plugins
 Plugin 'fatih/vim-go'
@@ -79,7 +78,7 @@ set gdefault " /g flag on substitutions
 set splitbelow
 set splitright
 
-set wildignore+=*.o,*.obj,.git,*.pyc,node_modules
+set wildignore+=*.o,*.obj,*/.git/*,*/.hg/*,*/.svn/*,*.pyc,*/node_modules/*
 
 " Syntax highlighting is slower with the new engine
 set regexpengine=1
@@ -89,6 +88,9 @@ let mapleader=','
 
 " Substitute
 nnoremap <leader>s :%s//g<left><left>
+
+" ag search
+map <leader>a :Ag<space>
 
 " Splits
 map <leader>v :vs<CR>
@@ -129,6 +131,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 " vim-go
 let g:go_fmt_command = "gofmt" " Use goimports instead of gofmt
+
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " The Silver Searcher - https://robots.thoughtbot.com/faster-grepping-in-vim
 if executable('ag')
