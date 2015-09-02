@@ -1,6 +1,4 @@
-set nocompatible " be iMproved
 set shell=/bin/bash
-set encoding=utf-8
 
 filetype off
 
@@ -42,8 +40,6 @@ colorscheme solarized
 
 set hidden " Leave hidden buffers open
 
-set history=1000 " By default Vim saves your last 8 commands
-
 set clipboard=unnamed " Using system copy/paste register
 
 set number " Enable line numbers
@@ -59,9 +55,6 @@ set ignorecase " Case insensitive searches
 set smartcase " Case sensitive searches when uppercase characters are used
 
 set showmatch " Highlight matching bracket
-
-set mouse=a " Enable mouse in all modes
-set ttymouse=xterm2
 
 set cursorline " Highlight the cursor line
 
@@ -122,7 +115,6 @@ nnoremap Q <nop>
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Airline
-set laststatus=2 " Always show status line
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
