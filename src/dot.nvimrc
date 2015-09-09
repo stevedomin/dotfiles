@@ -1,38 +1,34 @@
 set shell=/bin/bash
 
-filetype off
+call plug#begin('~/.nvim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.nvim/bundle/Vundle.vim
-call vundle#begin('~/.nvim/bundle')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 
 " Color scheme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " Misc. plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-endwise'
-Plugin 'bling/vim-airline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'rking/ag.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'JazzCore/ctrlp-cmatcher'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'rking/ag.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'JazzCore/ctrlp-cmatcher'
 
 " Language plugins
-Plugin 'fatih/vim-go'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-markdown'
-Plugin 'rust-lang/rust.vim'
+Plug 'fatih/vim-go'
+Plug 'elixir-lang/vim-elixir'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-markdown'
+Plug 'rust-lang/rust.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" All of your Plugs must be added before the following line
+call plug#end()
+
+filetype plugin indent on
 
 syntax enable " Turn on syntax highlighting
 set background=dark
