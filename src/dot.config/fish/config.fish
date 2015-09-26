@@ -6,7 +6,7 @@ set fish_greeting
 # ENV
 # --------------------------------------------
 
-set -xg EDITOR 'vim'
+set -xg EDITOR 'nvim'
 
 set -xg KNIFE_ENV 'staging'
 set -xg DOCKER_HOST tcp://dev.vm:2375
