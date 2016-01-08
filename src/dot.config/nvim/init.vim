@@ -2,8 +2,6 @@ set shell=/bin/bash
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'gmarik/Vundle.vim'
-
 " Color scheme
 Plug 'altercation/vim-colors-solarized'
 
@@ -17,6 +15,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'JazzCore/ctrlp-cmatcher'
+
+Plug 'benekastah/neomake'
 
 " Language plugins
 Plug 'fatih/vim-go'
