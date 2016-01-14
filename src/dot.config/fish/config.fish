@@ -26,7 +26,7 @@ set -xg PATH /usr/bin /bin /usr/sbin /sbin /opt/X11/bin $PATH
 set -xg PATH /usr/local/bin $PATH
 set -xg PATH $HOME/src/google-cloud-sdk/bin $PATH
 set -xg PATH /usr/local/share/npm/bin $PATH
-set -xg PATH $HOME/src/go/bin $PATH
+set -xg PATH /usr/local/opt/go/libexec/bin $PATH
 set -xg PATH $GOBIN $PATH
 
 # --------------------------------------------
