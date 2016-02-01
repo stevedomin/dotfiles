@@ -59,6 +59,15 @@
   # Include summaries of merged commits in newly created merge commit messages
   log = true
 
+[transfer]
+  fsckobjects = true
+
+[fetch]
+  fsckobjects = true
+
+[receive]
+  fsckObjects = true
+
 [branch]
   autosetuprebase = always
 
