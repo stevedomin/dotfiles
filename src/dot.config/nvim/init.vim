@@ -30,6 +30,10 @@ call plug#end()
 
 filetype plugin indent on
 
+" ==========================================
+" General config
+" ==========================================
+
 syntax enable " Turn on syntax highlighting
 set background=dark
 colorscheme solarized
@@ -44,14 +48,11 @@ set expandtab " Tab -> spaces
 set tabstop=2 " Tab shows as two columns wide
 set shiftwidth=2 " How many spaces to indent text with
 set softtabstop=2 " How many columns to insert when I press tab
-set backspace=indent,eol,start "Allow backspacing over everything in insert mode
 
-set incsearch " Search as you type
 set ignorecase " Case insensitive searches
 set smartcase " Case sensitive searches when uppercase characters are used
 
 set showmatch " Highlight matching bracket
-
 set cursorline " Highlight the cursor line
 
 set nowrap " Don't wrap lines
@@ -72,7 +73,10 @@ set wildignore+=*.o,*.obj,*/.git/*,*/.hg/*,*/.svn/*,*.pyc,*/node_modules/*
 " Syntax highlighting is slower with the new engine
 set regexpengine=1
 
-" Mapping
+" ==========================================
+" Command mapping
+" ==========================================
+
 let mapleader=','
 
 " Substitute
@@ -84,6 +88,12 @@ map <leader>a :Ag<space>
 " Splits
 map <leader>v :vs<CR>
 map <leader>h :sp<CR>
+
+" Make Y behave like C and D
+map Y y$
+
+" Shortcut for removing search highlight
+nnoremap <Esc> :nohl<Cr>
 
 " Save with ctrl-s
 map <C-s> <Esc>:w<CR>
@@ -107,22 +117,47 @@ cnoremap <C-e> <End>
 " Never go in Ex mode again
 nnoremap Q <nop>
 
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Search word under cursor
+nmap <silent> <C-f> :Ag "<cword>"<CR>
 
+" Save a protected file
+cmap w!! w !sudo tee % >/dev/null
+
+" ==========================================
 " Airline
+" ==========================================
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" ==========================================
 " NERDTree
+" ==========================================
+
 map <C-n> :NERDTreeToggle<CR>
 
-" vim-go
-let g:go_fmt_command = "gofmt" " Use goimports instead of gofmt
+" Make NERDTree close when you open a file from it. Helps recover screen space!
+let NERDTreeQuitOnOpen=1
 
+" Disable netrw's autocmd, since we're ALWAYS using NERDTree
+runtime plugin/netRwPlugin.vim
+augroup FileExplorer
+  au!
+augroup END
+
+" ==========================================
+" vim-go
+" ==========================================
+
+let g:go_fmt_command = "goimports" " Use goimports instead of gofmt
+
+" ==========================================
+" The Silver Searcher - https://robots.thoughtbot.com/faster-grepping-in-vim
+" ==========================================
+
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
-" The Silver Searcher - https://robots.thoughtbot.com/faster-grepping-in-vim
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
