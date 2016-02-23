@@ -152,7 +152,7 @@ augroup END
 " vim-go
 " ==========================================
 
-let g:go_fmt_command = "goimports" " Use goimports instead of gofmt
+let g:go_fmt_command = "gofmt"
 
 " ==========================================
 " The Silver Searcher - https://robots.thoughtbot.com/faster-grepping-in-vim
