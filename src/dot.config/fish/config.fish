@@ -44,9 +44,10 @@ rbenv rehash >/dev/null ^&1
 
 set -l plugins_path ~/.config/fish/plugins
 # Bundler
-. $plugins_path/bundler/bundler.fish
+source $plugins_path/bundler/bundler.fish
 # node_modules
-. $plugins_path/node_modules/node_modules.fish
+source $plugins_path/node_modules/node_modules.fish
+
 
 # --------------------------------------------
 # PRIVATE
