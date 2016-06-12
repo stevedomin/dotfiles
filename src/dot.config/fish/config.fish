@@ -1,6 +1,6 @@
 set fish_greeting
 
-. ~/.config/fish/aliases.fish
+source ~/.config/fish/aliases.fish
 
 # --------------------------------------------
 # ENV
@@ -25,17 +25,9 @@ set -xg LANG en_US.UTF-8
 set -xg PATH /usr/bin /bin /usr/sbin /sbin /opt/X11/bin $PATH
 set -xg PATH /usr/local/bin $PATH
 set -xg PATH $HOME/src/google-cloud-sdk/bin $PATH
-set -xg PATH /usr/local/share/npm/bin $PATH
+set -xg PATH $HOME/.npm-packages/bin $PATH
 set -xg PATH /usr/local/opt/go/libexec/bin $PATH
 set -xg PATH $GOBIN $PATH
-
-# --------------------------------------------
-# RBENV
-# --------------------------------------------
-
-set PATH $HOME/.rbenv/bin $PATH
-set PATH $HOME/.rbenv/shims $PATH
-rbenv rehash >/dev/null ^&1
 
 # --------------------------------------------
 # PLUGINS
@@ -43,10 +35,12 @@ rbenv rehash >/dev/null ^&1
 # --------------------------------------------
 
 set -l plugins_path ~/.config/fish/plugins
+# rbenv
+source $plugins_path/rbenv/rbenv.fish
 # Bundler
 source $plugins_path/bundler/bundler.fish
-# node_modules
-source $plugins_path/node_modules/node_modules.fish
+# node
+source $plugins_path/node/node.fish
 # z
 source $plugins_path/z/z.fish
 
@@ -56,6 +50,6 @@ source $plugins_path/z/z.fish
 # --------------------------------------------
 
 for fish_file in ~/.config/fish/private/*
-  . $fish_file
+  source $fish_file
 end
 
