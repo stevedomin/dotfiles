@@ -55,6 +55,9 @@
 [url "git@github.com:"]
   insteadOf = "https://github.com/"
 
+[commit]
+  gpgsign = true
+
 [merge]
   # Include summaries of merged commits in newly created merge commit messages
   log = true
