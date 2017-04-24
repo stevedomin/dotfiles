@@ -22,6 +22,7 @@ Plug 'benekastah/neomake'
 " Language plugins
 Plug 'fatih/vim-go'
 Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-markdown'
 Plug 'rust-lang/rust.vim'
@@ -37,6 +38,7 @@ filetype plugin indent on
 
 syntax enable " Turn on syntax highlighting
 set background=dark
+let g:solarized_termtrans=1
 colorscheme solarized
 
 set hidden " Leave hidden buffers open
