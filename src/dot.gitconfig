@@ -23,10 +23,6 @@
   # Rank contributors
   rank = shortlog -sn --no-merges
 
-[apply]
-  # Detect whitespace errors when applying a patch
-  whitespace = fix
-
 [core]
   autocrlf = input
   editor = nvim
