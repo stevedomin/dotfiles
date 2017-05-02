@@ -43,6 +43,9 @@ colorscheme solarized
 
 set hidden " Leave hidden buffers open
 
+set mouse=a
+set guicursor=
+
 set clipboard=unnamed " Using system copy/paste register
 
 set number " Enable line numbers
