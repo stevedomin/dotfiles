@@ -21,6 +21,8 @@ set -xg LANG en_US.UTF-8
 set -xg CUDA_HOME /usr/local/cuda
 set -xg DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH $CUDA_HOME/lib
 
+set -xg ERL_AFLAGS '-kernel shell_history enabled'
+
 # --------------------------------------------
 # PATH
 # --------------------------------------------
