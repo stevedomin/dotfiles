@@ -12,6 +12,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
+echo "General UI/UX"
+
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "steve-mbp"
 sudo scutil --set HostName "steve-mbp"
@@ -67,6 +69,8 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
+echo "Trackpad, mouse, keyboard, ..."
+
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -112,6 +116,8 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Screen                                                                      #
 ###############################################################################
 
+echo "Screen"
+
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
@@ -134,6 +140,8 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
+
+echo "Finder"
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
@@ -224,6 +232,8 @@ chflags nohidden ~/Library
 # Dock & hot corners                                                          #
 ###############################################################################
 
+echo "Dock"
+
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilte-stack -bool true
 
@@ -256,6 +266,8 @@ ln -s /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app /Appli
 # Safari & WebKit                                                             #
 ###############################################################################
 
+echo "Safari"
+
 # Set Safari’s home page to `about:blank` for faster loading
 defaults write com.apple.Safari HomePage -string "about:blank"
 
@@ -280,6 +292,8 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Terminal                                                                    #
 ###############################################################################
 
+echo "Terminal"
+
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
@@ -292,6 +306,8 @@ defaults write org.x.X11 wm_ffm -bool true
 # Time Machine                                                                #
 ###############################################################################
 
+echo "Time Machine"
+
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
@@ -301,6 +317,8 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 ###############################################################################
 # Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
 ###############################################################################
+
+echo "Address Book, Dashboard"
 
 # Enable the debug menu in Address Book
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
@@ -321,6 +339,8 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
+
+echo "Mac App Store"
 
 # Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
