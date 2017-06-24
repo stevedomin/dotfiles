@@ -18,6 +18,9 @@ set -xg GPG_TTY (tty)
 set -xg LC_ALL en_US.UTF-8
 set -xg LANG en_US.UTF-8
 
+set -xg CUDA_HOME /usr/local/cuda
+set -xg DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH $CUDA_HOME/lib
+
 # --------------------------------------------
 # PATH
 # --------------------------------------------
@@ -28,6 +31,7 @@ set -xg PATH $HOME/src/google-cloud-sdk/bin $PATH
 set -xg PATH $HOME/.npm-packages/bin $PATH
 set -xg PATH /usr/local/opt/go/libexec/bin $PATH
 set -xg PATH $GOBIN $PATH
+set -xg PATH $CUDA_HOME/bin $PATH
 
 # --------------------------------------------
 # PLUGINS
@@ -43,7 +47,6 @@ source $plugins_path/bundler/bundler.fish
 source $plugins_path/node/node.fish
 # z
 source $plugins_path/z/z.fish
-
 
 # --------------------------------------------
 # PRIVATE
