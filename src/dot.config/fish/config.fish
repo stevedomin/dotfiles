@@ -9,7 +9,7 @@ source ~/.config/fish/aliases.fish
 set -xg EDITOR 'nvim'
 
 set -xg KNIFE_ENV 'staging'
-set -xg DOCKER_HOST tcp://dev.vm:2375
+#set -xg DOCKER_HOST tcp://dev.vm:2375
 
 set -xg GOPATH $HOME
 set -xg GOBIN $GOPATH/bin
