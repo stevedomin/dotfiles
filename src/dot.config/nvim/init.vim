@@ -23,6 +23,7 @@ Plug 'benekastah/neomake'
 Plug 'fatih/vim-go'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
+Plug 'mhinz/vim-mix-format'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-markdown'
 Plug 'rust-lang/rust.vim'
@@ -152,6 +153,13 @@ runtime plugin/netRwPlugin.vim
 augroup FileExplorer
   au!
 augroup END
+
+" ==========================================
+" vim-mix-format
+" ==========================================
+
+let g:mix_format_on_save = 1
+let g:mix_format_silent_errors = 1
 
 " ==========================================
 " vim-go
