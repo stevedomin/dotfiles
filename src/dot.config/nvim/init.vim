@@ -16,6 +16,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'sbdchd/neoformat'
 
 Plug 'benekastah/neomake'
 
@@ -23,7 +24,6 @@ Plug 'benekastah/neomake'
 Plug 'fatih/vim-go'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
-Plug 'mhinz/vim-mix-format'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-markdown'
 Plug 'rust-lang/rust.vim'
@@ -155,11 +155,16 @@ augroup FileExplorer
 augroup END
 
 " ==========================================
-" vim-mix-format
+" neoformat
 " ==========================================
 
-let g:mix_format_on_save = 1
-let g:mix_format_silent_errors = 1
+let g:neoformat_enabled_elixir = ['mixformat']
+let g:neoformat_verbose = 0
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 " ==========================================
 " vim-go
