@@ -1,6 +1,6 @@
 set shell=/bin/bash
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Color scheme
 Plug 'altercation/vim-colors-solarized'
@@ -11,12 +11,17 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
+Plug 'mhinz/vim-mix-format'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'JazzCore/ctrlp-cmatcher'
-Plug 'sbdchd/neoformat'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'JazzCore/ctrlp-cmatcher'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+" Plug 'sbdchd/neoformat'
+Plug 'fatih/vim-hclfmt'
 
 Plug 'benekastah/neomake'
 
@@ -87,7 +92,7 @@ set regexpengine=1
 let mapleader=','
 
 " Substitute
-nnoremap <leader>s :%s//g<left><left>
+nnoremap <leader>s :%s//<left><left>
 
 " ag search
 map <leader>a :Ag<space>
@@ -158,13 +163,16 @@ augroup END
 " neoformat
 " ==========================================
 
-let g:neoformat_enabled_elixir = ['mixformat']
-let g:neoformat_verbose = 0
+" let g:neoformat_enabled_elixir = ['mixformat']
+" let g:neoformat_verbose = 0
 
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+" augroup fmt
+"  autocmd!
+"  autocmd BufWritePre * undojoin | Neoformat
+" augroup END
+
+let g:mix_format_on_save = 1
+let g:mix_format_options = '--check-equivalent'
 
 " ==========================================
 " vim-go
@@ -173,20 +181,36 @@ augroup END
 let g:go_fmt_command = "gofmt"
 
 " ==========================================
-" The Silver Searcher - https://robots.thoughtbot.com/faster-grepping-in-vim
+" FZF
 " ==========================================
 
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+nnoremap <C-p> :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>p :History<CR>
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" ==========================================
+" Ag
+" ==========================================
 
 if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  set grepprg = "ag --nogroup --nocolor"
+  let g:ackprg = "ag --nogroup --nocolor --column"
 endif
 
