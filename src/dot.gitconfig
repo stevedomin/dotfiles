@@ -1,7 +1,7 @@
 [user]
   name = "Steve Domin"
   email = steve@stevedomin.com
-  signingKey = 6DE39A63
+  signingKey = A71B8AC0EAA71F0C
 
 [alias]
   a  = add --all .
@@ -29,7 +29,7 @@
   # Use custom `.gitignore` and `.gitattributes`
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
-  pager = diff-highlight | less
+  pager = diffr | less
   # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
   whitespace = space-before-tab,indent-with-non-tab,trailing-space
 
@@ -80,9 +80,9 @@
   compactionHeuristic = true
 
 [pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+  log = diffr | less
+  show = diffr | less
+  diff = diffr | less
 
 [interactive]
-  diffFilter = diff-highlight
+  diffFilter = diffr
