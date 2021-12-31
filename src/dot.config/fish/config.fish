@@ -23,6 +23,7 @@ set -xg FZF_DEFAULT_COMMAND 'ag -l --nocolor --hidden --ignore .git -g ""'
 
 set -xg PATH /usr/bin /bin /usr/sbin /sbin $PATH
 set -xg PATH /opt/homebrew/bin $PATH
+set -xg PATH $HOME/.mix/escripts $PATH
 set -xg PATH $HOME/bin $PATH
 set -xg PATH $HOME/code/google-cloud-sdk/bin $PATH
 
